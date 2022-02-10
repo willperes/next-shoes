@@ -1,8 +1,6 @@
-import type { GetStaticProps, NextPage } from 'next'
-import { useEffect } from 'react'
+import type { GetStaticProps } from 'next'
 import { Header } from '../components/Header'
 import { Products } from '../components/Products'
-import { api } from '../services/api'
 
 interface HomeProps {
   products: [{
@@ -30,10 +28,8 @@ type Product = {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-
-  const response = await api.get('/products');
-
-  const responseJson = response.data;
+  const response = await fetch(`${process.env.API_URL}products`);
+  const responseJson = await response.json();
 
   const products = responseJson.map((product: Product) => {
     let productFormatted = {

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { ProductCard } from "../ProductCard";
 import { Container, Content } from "./styles";
 
