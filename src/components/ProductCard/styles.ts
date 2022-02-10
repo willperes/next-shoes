@@ -14,7 +14,7 @@ export const Product = styled.div`
             height: 250px;
             width: 250px;
             object-fit: cover;
-            transition: all .2s;
+            transition: border-radius .2s;
         }
     }
 

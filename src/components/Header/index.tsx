@@ -1,13 +1,18 @@
 import Link from 'next/link';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
+import { useMenu } from '../../hooks/useMenu';
+import { MenuModal } from '../MenuModal';
 import { SignInButton } from '../SignInButton';
 
 import { Container, Content, Menu, RightContent } from "./styles";
 
 export function Header() {
+    const { openMenu } = useMenu();
+
     return (
         <Container>
+            <MenuModal />
             <Content>
                 <h1>NextShoes</h1>
                 <nav>
@@ -24,7 +29,7 @@ export function Header() {
                     <SignInButton />
                 </RightContent>
                 <Menu className="menu">
-                    <HiMenu />
+                    <HiMenu onClick={openMenu}/>
                 </Menu>
             </Content>
         </Container>

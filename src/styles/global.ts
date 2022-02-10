@@ -28,4 +28,43 @@ export default createGlobalStyle`
         color: inherit;
         text-decoration: none;
     }
+
+    .react-modal-overlay {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1500;
+
+        display: flex;
+        justify-content: flex-end;
+    }
+    .react-modal-content {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        background: ${props => props.theme.colors.background};
+
+        .react-modal-close {
+            position: absolute;
+            left: 0;
+            margin: 1rem;
+            border: none;
+            background: ${props => props.theme.colors.background};
+
+            svg {
+                color: ${props => props.theme.colors.white};
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .react-modal-content {
+            max-width: 100vw;
+        }
+    }
 `

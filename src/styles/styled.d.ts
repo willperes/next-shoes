@@ -7,6 +7,7 @@ declare module 'styled-components' {
         colors: {
             primary: string;
             background: string;
+            white: string;
 
             gray300: string;
             gray700: string;
@@ -22,6 +23,7 @@ declare module 'styled-components' {
         colors: {
             primary: string;
             background: string;
+            white: string;
 
             gray300: string;
             gray700: string;
