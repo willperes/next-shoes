@@ -23,7 +23,7 @@ export function Products({ products }: ProductsProps) {
         <Container>
             <Content className="content">
                 {products.map((product: Product) => (
-                    <Link href={`/product/${product.id}`} key={product.id}>
+                    <Link href={`/product/${product.id}`} key={product.id} passHref >
                         <div><ProductCard product={product}/></div>
                     </Link>
                 ))}

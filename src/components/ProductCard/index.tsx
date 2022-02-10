@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Product } from "./styles";
 
 interface ProductCardProps {
@@ -13,7 +14,7 @@ export function ProductCard({ product }: ProductCardProps) {
     return (
         <Product>
             <header>
-                <img src="/images/shoe.jpg" alt={product.name} />
+                <Image src="/images/shoe.jpg" alt={product.name} height="250%" width="250%"/>
             </header>
             <section className="body">
                 <h1>{product.name} {product.id}</h1>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CustomButton } from "../../components/CustomButton";
 
 import { Header } from "../../components/Header";
-import { Wrapper, Main } from "./styles";
+import { Wrapper, Main } from "../../styles/pages/product";
 
 interface Product {
     id: number,
@@ -28,7 +28,7 @@ export default function Product({ product }: ProductProps) {
             <Header />
             <Main>
                 <Wrapper>
-                    <Image src="/images/shoe.jpg" height="600%" width="600%" />
+                    <Image src="/images/shoe.jpg" alt={product.name} height="600%" width="600%" />
                     <div className="content">
                         <h1>{product.name} {product.id}</h1>
                         <h2>{product.category}</h2>
