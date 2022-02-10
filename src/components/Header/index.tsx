@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { HiMenu } from 'react-icons/hi';
 import { SignInButton } from '../SignInButton';
@@ -10,10 +11,12 @@ export function Header() {
             <Content>
                 <h1>NextShoes</h1>
                 <nav>
+                <Link href={'/'}>
                     <a>Home</a>
-                    <a>Women</a>
-                    <a className="active">Man</a>
-                    <a>Kids</a>
+                </Link>
+                <a>Women</a>
+                <a className="active">Men</a>
+                <a>Kids</a>
                 </nav>
                 <RightContent className="rightContent">
                     <FaSearch />

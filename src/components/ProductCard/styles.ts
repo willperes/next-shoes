@@ -75,4 +75,16 @@ export const Product = styled.div`
             }
         }
     }
+
+    @media (max-width: 400px) {
+        .body {
+            h1, span {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
 `

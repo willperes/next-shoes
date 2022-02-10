@@ -1,14 +1,14 @@
 export default {
-    title: 'dark',
+    title: 'light',
 
     colors: {
         primary: '#0056D0',
-        background: '#111111',
+        background: '#F4F4F4',
 
         gray300: '#C1C1C1',
         gray700: '#444444',
 
-        text: '#FFFFFF',
+        text: '#111111',
         buttonText: '#FFFFFF'
     },
 }

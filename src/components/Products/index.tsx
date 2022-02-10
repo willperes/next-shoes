@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ProductCard } from "../ProductCard";
 import { Container, Content } from "./styles";
 
@@ -22,7 +23,9 @@ export function Products({ products }: ProductsProps) {
         <Container>
             <Content className="content">
                 {products.map((product: Product) => (
-                    <ProductCard product={product} key={product.id}/>
+                    <Link href={`/product/${product.id}`} key={product.id}>
+                        <div><ProductCard product={product}/></div>
+                    </Link>
                 ))}
             </Content>
         </Container>
