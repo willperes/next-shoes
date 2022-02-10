@@ -28,7 +28,7 @@ type Product = {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.API_URL}products`);
+  const response = await fetch(`${process.env.API_URL}/products`);
   const responseJson = await response.json();
 
   const products = responseJson.map((product: Product) => {
