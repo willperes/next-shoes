@@ -4,6 +4,7 @@ import { HiMenu } from 'react-icons/hi';
 import { useMenu } from '../../hooks/useMenu';
 import { MenuModal } from '../MenuModal';
 import { SignInButton } from '../SignInButton';
+import { ThemeSwitch } from '../ThemeSwitch';
 
 import { Container, Content, Menu, RightContent } from "./styles";
 
@@ -24,6 +25,7 @@ export function Header() {
                 <a>Kids</a>
                 </nav>
                 <RightContent className="rightContent">
+                    <ThemeSwitch />
                     <FaSearch />
                     <FaShoppingCart />
                     <SignInButton />

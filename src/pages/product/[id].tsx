@@ -35,7 +35,6 @@ export default function Product({ product }: ProductProps) {
                         <h3>{product.amount}</h3>
                         <CustomButton>Buy now</CustomButton>
                         <p>Your workhorse with wings returns. The Nike Lorem Ipsum has that extra bounce for long, short or everyday runs. It’s cool and breathable with a wider fit at the toes and plenty of cushioned support to help you fly past your personal goals. Bold colors nod to the world coming together to celebrate sport.</p>
-
                     </div>
                 </Wrapper>
             </Main>

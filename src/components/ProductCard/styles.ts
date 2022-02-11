@@ -25,7 +25,7 @@ export const Product = styled.div`
         color: ${props => props.theme.colors.text};
 
         p {
-            color: ${props => props.theme.colors.gray300};
+            color: ${props => props.theme.colors.textLighter};
             margin-bottom: .5rem;
         }
 
@@ -35,7 +35,7 @@ export const Product = styled.div`
         }
     }
 
-    transition: all .2s;
+    transition: transform .2s, border-radius .2s, box-shadow .2s;
 
     &:hover {
         transform: scale(1.05);

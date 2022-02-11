@@ -51,6 +51,7 @@ export default createGlobalStyle`
         width: 100%;
         max-width: 400px;
         background: ${props => props.theme.colors.background};
+        overflow: auto;
 
         .react-modal-close {
             position: absolute;
@@ -60,7 +61,7 @@ export default createGlobalStyle`
             background: ${props => props.theme.colors.background};
 
             svg {
-                color: ${props => props.theme.colors.white};
+                color: ${props => props.theme.colors.text};
                 height: 25px;
                 width: 25px;
             }

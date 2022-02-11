@@ -36,7 +36,7 @@ export const Wrapper = styled.section`
             margin-bottom: .5rem;
 
             font-weight: normal;
-            color: ${props => props.theme.colors.gray300};
+            color: ${props => props.theme.colors.textLighter};
         }
         
         button {

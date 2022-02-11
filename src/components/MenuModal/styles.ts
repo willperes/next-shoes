@@ -20,7 +20,7 @@ export const Content = styled.div`
 
     .divider {
         margin: .75rem 0;
-        background: ${props => props.theme.colors.gray700};
+        background: ${props => props.theme.colors.textLighter};
     }
 
     button {
@@ -29,5 +29,9 @@ export const Content = styled.div`
         & + button {
             margin-top: .5rem;
         }
+    }
+
+    .theme-switch {
+        margin: 1rem auto;
     }
 `

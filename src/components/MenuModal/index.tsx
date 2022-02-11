@@ -7,6 +7,7 @@ import { CustomButton } from '../CustomButton';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import Divider from '@mui/material/Divider';
 import { SignInButton } from '../SignInButton';
+import { ThemeSwitch } from '../ThemeSwitch';
 
 export function MenuModal() {
     const { menuIsOpen, closeMenu } = useMenu();
@@ -38,6 +39,9 @@ export function MenuModal() {
                 <CustomButton linkTo={'/'} onClick={handleButtonClick}><FaSearch /></CustomButton>
                 <CustomButton linkTo={'/'} onClick={handleButtonClick}><FaShoppingCart /></CustomButton>
                 <SignInButton />
+                <div className="theme-switch">
+                    <ThemeSwitch />
+                </div>
             </Content>
         </Modal>
     );

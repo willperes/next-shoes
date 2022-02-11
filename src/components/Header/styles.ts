@@ -4,9 +4,8 @@ export const Container = styled.header`
     position: fixed;
     width: 100%;
     padding: 0 2rem 0 2rem;
-    background: ${props => props.theme.colors.background}EE;
+    background: ${props => props.theme.colors.headerBackground}EE;
     backdrop-filter: blur(10px) saturate(2);
-    border-bottom: 1px solid ${props => props.theme.colors.gray700}EE;
 
     z-index: 1000;
 
@@ -45,7 +44,7 @@ export const Content = styled.div`
     nav {
         
         a {
-            color: ${props => props.theme.colors.gray300};
+            color: ${props => props.theme.colors.textLighter};
             font-weight: 400;
             cursor: pointer;
 

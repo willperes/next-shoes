@@ -6,6 +6,7 @@ declare module 'styled-components' {
 
         colors: {
             primary: string;
+            headerBackground: string;
             background: string;
             white: string;
 
@@ -13,6 +14,7 @@ declare module 'styled-components' {
             gray700: string;
 
             text: string;
+            textLighter: string,
             buttonText: string;
         },
     }
@@ -22,6 +24,7 @@ declare module 'styled-components' {
 
         colors: {
             primary: string;
+            headerBackground: string;
             background: string;
             white: string;
 
@@ -29,6 +32,7 @@ declare module 'styled-components' {
             gray700: string;
 
             text: string;
+            textLighter: string,
             buttonText: string;
         },
     }
