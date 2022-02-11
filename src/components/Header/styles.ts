@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
     position: fixed;
     width: 100%;
-    padding: 0 2rem 0 2rem;
+    padding: 0 2rem;
     background: ${props => props.theme.colors.headerBackground}EE;
     backdrop-filter: blur(10px) saturate(2);
 
@@ -22,6 +22,10 @@ export const Container = styled.header`
             display: block;
             margin-left: auto;
         }
+    }
+
+    @media (max-width: 598px) {
+        padding: 0 3.5vw;
     }
 `
 

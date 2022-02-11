@@ -34,4 +34,18 @@ export const Content = styled.div`
     .theme-switch {
         margin: 1rem auto;
     }
+
+    @media (max-width: 598px) {
+        nav {
+            button {
+                height: 3.5rem;
+                font-size: 1.25rem;
+            }
+        }
+
+        button {
+            height: 3.5rem;
+            font-size: 1.25rem;
+        }
+    }
 `

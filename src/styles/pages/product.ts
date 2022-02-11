@@ -48,6 +48,35 @@ export const Wrapper = styled.section`
         p {
             width: 18rem;
         }
+
+        .size-selection {
+            margin-top: 1rem;
+
+            button {
+                height: 30px;
+                width: 30px;
+                background: ${props => props.theme.colors.background};
+                border: 2px solid ${props => props.theme.colors.primary};
+                border-radius: 5px;
+                color: ${props => props.theme.colors.primary};
+                transition: background .2s, color .2s;
+                margin: 0;
+
+                & + button {
+                    margin-left: .25rem;
+                }
+
+                &:hover {
+                    background: ${props => props.theme.colors.primary};
+                    color: ${props => props.theme.colors.white};
+                }
+
+                &.selected {
+                    background: ${props => props.theme.colors.primary};
+                    color: ${props => props.theme.colors.white}
+                }
+            }
+        }
     }
 
     @media (max-width: 850px) {
@@ -74,6 +103,17 @@ export const Wrapper = styled.section`
                 height: 4rem;
                 font-size: 1.5rem;
             }
+
+            .size-selection {
+                button {
+                    height: 50px;
+                    width: 50px;
+
+                    & + button {
+                        margin-left: 1rem;
+                    }
+                }
+            }
         }
     }
 
@@ -92,6 +132,17 @@ export const Wrapper = styled.section`
             button {
                 font-size: 1.25rem;
                 height: 3.5rem;
+            }
+
+            .size-selection {
+                button {
+                    height: 40px;
+                    width: 40px;
+
+                    & + button {
+                        margin-left: .5rem;
+                    }
+                }
             }
         }
     }

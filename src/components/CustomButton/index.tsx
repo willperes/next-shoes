@@ -9,10 +9,10 @@ interface CustomButtonProps {
 
 export function CustomButton({ children, linkTo, onClick }: CustomButtonProps) {
     return (
-        <Link href={`${linkTo}`}>
-            <Button type="button" onClick={onClick}>
+        
+            <Button onClick={onClick}>
                 {children}
             </Button>
-        </Link>
+        
     );
 }

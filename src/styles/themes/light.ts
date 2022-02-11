@@ -4,13 +4,13 @@ export default {
     colors: {
         primary: '#0056D0',
         headerBackground: '#FFFFFF',
-        background: '#F1F2F4',
+        background: '#FCFCFC',
         white: '#FFFFFF',
 
         gray300: '#C1C1C1',
         gray700: '#444444',
 
-        text: '#111111',
+        text: '#222222',
         textLighter: '#444444',
         buttonText: '#FFFFFF'
     },

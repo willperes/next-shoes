@@ -3,8 +3,8 @@ export default {
 
     colors: {
         primary: '#0056D0',
-        headerBackground: '#111111',
-        background: '#151515',
+        headerBackground: '#151515',
+        background: '#111111',
         white: '#FFFFFF',
 
         gray300: '#C1C1C1',

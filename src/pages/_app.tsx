@@ -1,8 +1,12 @@
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { ChangeThemeProvider, useChangeTheme } from '../hooks/useChangeTheme';
+import { CartProvider } from '../hooks/useCart';
+import { ChangeThemeProvider } from '../hooks/useChangeTheme';
 import { MenuProvider } from '../hooks/useMenu';
+
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import GlobalStyles from '../styles/global';
 import dark from '../styles/themes/dark';
@@ -42,12 +46,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ChangeThemeProvider switchTheme={switchTheme} >
-      <MenuProvider>
-        <ThemeProvider theme={isDarkTheme ? dark : light}>
-          <Component {...pageProps} />
-          <GlobalStyles />
-        </ThemeProvider>
-      </MenuProvider>
+      <CartProvider>
+        <MenuProvider>
+          <ThemeProvider theme={isDarkTheme ? dark : light}>
+            <Component {...pageProps} />
+            <ToastContainer/>
+            <GlobalStyles />
+          </ThemeProvider>
+        </MenuProvider>
+      </CartProvider>
     </ChangeThemeProvider>
   );
 }

@@ -1,8 +1,9 @@
 import { GetStaticPaths } from "next";
-import Image from "next/image";
 import { CustomButton } from "../../components/CustomButton";
 
 import { Header } from "../../components/Header";
+import { SizeSelection } from "../../components/SizeSelection";
+import { useCart } from "../../hooks/useCart";
 import { Wrapper, Main } from "../../styles/pages/product";
 
 interface Product {
@@ -23,17 +24,26 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
+    const { addToCart } = useCart();
+
+    function handleClick() {
+        addToCart(product);
+    }
+
     return (
         <>
             <Header />
             <Main>
                 <Wrapper>
-                    <img src="/images/shoe.jpg" alt={product.name}/>
+                    <img src="/images/shoe.jpg" alt={product.name} />
                     <div className="content">
                         <h1>{product.name} {product.id}</h1>
                         <h2>{product.category}</h2>
                         <h3>{product.amount}</h3>
-                        <CustomButton>Buy now</CustomButton>
+                        <div className="size-selection">
+                            <SizeSelection />
+                        </div>
+                        <CustomButton onClick={handleClick}>Buy now</CustomButton>
                         <p>Your workhorse with wings returns. The Nike Lorem Ipsum has that extra bounce for long, short or everyday runs. It’s cool and breathable with a wider fit at the toes and plenty of cushioned support to help you fly past your personal goals. Bold colors nod to the world coming together to celebrate sport.</p>
                     </div>
                 </Wrapper>
