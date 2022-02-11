@@ -50,14 +50,14 @@ export const Product = styled.div`
     }
 
     @media (max-width: 598px) {
-        width: 85vw;
+        width: 92.5vw;
         height: auto;
 
         padding-bottom: 1rem;
 
         header {
             img {
-                width: 85vw;
+                width: 92.5vw;
                 height: auto;
             }
         }

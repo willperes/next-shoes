@@ -28,7 +28,7 @@ export default function Product({ product }: ProductProps) {
             <Header />
             <Main>
                 <Wrapper>
-                    <Image src="/images/shoe.jpg" alt={product.name} height="600%" width="600%" />
+                    <img src="/images/shoe.jpg" alt={product.name}/>
                     <div className="content">
                         <h1>{product.name} {product.id}</h1>
                         <h2>{product.category}</h2>

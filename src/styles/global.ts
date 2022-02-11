@@ -40,7 +40,11 @@ export default createGlobalStyle`
 
         display: flex;
         justify-content: flex-end;
+
+        right: -30rem;
+        transition: all 500ms ease-in-out;
     }
+    
     .react-modal-content {
         position: relative;
         width: 100%;
@@ -60,6 +64,16 @@ export default createGlobalStyle`
                 width: 25px;
             }
         }
+    }
+
+    .ReactModal__Overlay--after-open{
+        opacity: 1;
+        right: 0;
+    }
+
+    .ReactModal__Overlay--before-close{
+        opacity: 0;
+        right: -30rem;
     }
 
     @media (max-width: 500px) {
