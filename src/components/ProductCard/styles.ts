@@ -63,27 +63,18 @@ export const Product = styled.div`
         }
 
         .body {
-            margin-top: .5rem;
-            margin-left: 1rem;
+            margin: 1.25rem 0 0 0;
 
-            h1, span {
+            h1 {
                 font-size: 1.75rem;
             }
 
             p {
                 font-size: 1.25rem;
             }
-        }
-    }
 
-    @media (max-width: 400px) {
-        .body {
-            h1, span {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 1rem;
+            span {
+                font-size: 1.25rem;
             }
         }
     }

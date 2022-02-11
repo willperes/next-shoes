@@ -75,11 +75,13 @@ export const Wrapper = styled.section`
 
     @media (max-width: 598px) {
         .content {
+            margin-top: 1.25rem;
+            
             h1 {
                 font-size: 1.75rem;
             }
 
-            h2 {
+            h2, h3 {
                 font-size: 1.25rem;
             }
 
