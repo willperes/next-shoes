@@ -42,6 +42,7 @@ export default createGlobalStyle`
         justify-content: flex-end;
 
         right: -30rem;
+        opacity: 0;
         transition: all 500ms ease-in-out;
     }
     
