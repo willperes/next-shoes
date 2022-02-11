@@ -52,13 +52,13 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 export function ThemeSwitch() {
     const { changeTheme } = useChangeTheme();
-    const [switchValue, setSwitchValue] = useState(true);
+    const [switchValue, setSwitchValue] = useState(false);
 
     useEffect(() => {
         const getDarkTheme = localStorage.getItem('@NextShoes: Theme');
 
         if (!getDarkTheme) {
-            setSwitchValue(true);
+            setSwitchValue(false);
             return;
         }
 

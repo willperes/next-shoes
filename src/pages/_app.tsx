@@ -13,13 +13,13 @@ import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
     const getDarkTheme = localStorage.getItem('@NextShoes: Theme');
     if (!getDarkTheme) {
-      localStorage.setItem('@NextShoes: Theme', 'dark');
-      setIsDarkTheme(true);
+      localStorage.setItem('@NextShoes: Theme', 'light');
+      setIsDarkTheme(false);
       return;
     }
 

@@ -27,7 +27,7 @@ export function Header() {
                 <RightContent className="rightContent">
                     <ThemeSwitch />
                     <FaSearch />
-                    <FaShoppingCart />
+                    <Link href={'/cart'}><FaShoppingCart /></Link>
                     <SignInButton />
                 </RightContent>
                 <Menu className="menu">

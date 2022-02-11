@@ -14,7 +14,8 @@ interface Product {
 
 interface CartContextData {
     changeProductSize: (size: number) => void;
-    addToCart: (producT: Product) => void;
+    addToCart: (product: Product) => void;
+    removeFromCart: (id: number, size: number) => void;
 }
 
 const CartContext = createContext<CartContextData>(
@@ -62,12 +63,34 @@ export function CartProvider({ children }: CartProviderProps) {
         setProductSize(0);
     }
 
+    function removeFromCart(id: number, size: number) {
+        let cart = [];
+
+        if (localStorage.hasOwnProperty('@NextShoes: Cart')) {
+            cart = JSON.parse(localStorage.getItem('@NextShoes: Cart') || '{}');
+        } else {
+            return;
+        }
+
+        /*
+          Realizar iteração no array retirado do localStorage, e então remover
+          o produto que possui o id informado ao chamar a função removeFromCart(id)
+        */
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id === id && cart[i].size === size) {
+                cart.splice(i, 1);
+                localStorage.setItem('@NextShoes: Cart', JSON.stringify(cart));
+                return;
+            }
+        }
+    }
+
     function changeProductSize(size: number) {
         setProductSize(size)
     }
 
     return (
-        <CartContext.Provider value={{ changeProductSize, addToCart }}>
+        <CartContext.Provider value={{ changeProductSize, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     );

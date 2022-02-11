@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next'
+import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Products } from '../components/Products'
 
@@ -14,6 +15,9 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   return (
     <>
+      <Head>
+        <title>Home | NextShoes</title>
+      </Head>
       <Header />
       <Products products={products} />
     </>

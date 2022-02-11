@@ -1,4 +1,5 @@
 import { GetStaticPaths } from "next";
+import Head from "next/head";
 import { CustomButton } from "../../components/CustomButton";
 
 import { Header } from "../../components/Header";
@@ -32,6 +33,9 @@ export default function Product({ product }: ProductProps) {
 
     return (
         <>
+            <Head>
+                <title>{product.name} | NextShoes</title>
+            </Head>
             <Header />
             <Main>
                 <Wrapper>

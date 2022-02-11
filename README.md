@@ -11,9 +11,9 @@
 # 📂Features
 
 - [x] Listar produtos utilizando uma API
-- [] Adicionar produtos ao carrinho
-- [] Remover produtos do carrinho
-- [] Atualizar o preço do carrinho de acordo com os produtos e suas quantidades
+- [x] Adicionar produtos ao carrinho
+- [x] Remover produtos do carrinho
+- [ ] Atualizar o preço do carrinho de acordo com os produtos e suas quantidades
 - [x] Hamburguer menu
 - [ ] Atualizar quantidade do produto no carrinho
 - [ ] Sistema de login de clientes
