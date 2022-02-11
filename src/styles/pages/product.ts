@@ -4,6 +4,10 @@ export const Main = styled.main`
     padding: 5rem 0;
 
     color: ${props => props.theme.colors.text};
+
+    @media (max-width: 598px) {
+        padding: 4rem 0;
+    }
 `
 
 export const Wrapper = styled.section`
