@@ -25,7 +25,8 @@
 
 <p align="center">A aplicação ainda está em desenvolvimento, mas você pode acompanhar como está sendo o desenvolvimento <a href='https://next-shoes.vercel.app/'>clicando aqui</a>.</p>
 
-![Screenshot of the website](https://i.imgur.com/4lwYLvl.png)
+![Screenshot of the website](https://i.imgur.com/dpgumz5.png)
+![Screenshot of the website](https://i.imgur.com/FGjqNwq.png)
 
 <br>
 
