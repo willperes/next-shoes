@@ -16,7 +16,7 @@ interface Product {
     category: string,
     image: string,
     amount: number,
-    size: number,
+    size: string,
     quantity: number,
 }
 
@@ -34,7 +34,7 @@ export default function Cart() {
         return key;
     }
 
-    function handleClick(id: number, size: number) {
+    function handleClick(id: number, size: string) {
         removeFromCart(id, size);
         if (localStorage.hasOwnProperty('@NextShoes: Cart')) {
             let cart = JSON.parse(localStorage.getItem('@NextShoes: Cart') || '{}');

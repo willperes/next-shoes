@@ -17,7 +17,7 @@ export default function Kids({ products }: KidsProps) {
   return (
     <>
       <Head>
-        <title>Kids' | NextShoes</title>
+        <title>Kids&apos; | NextShoes</title>
       </Head>
       <Header selectedTab={'kids'} />
       <Products products={products} />
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const responseJson = await response.json();
 
   const products = responseJson.filter((product: Product) => {
-      if (product.category === "Kids' Shoes") return product;
+      if (product.category === "Kids\' Shoes") return product;
   });
 
   return {

@@ -17,7 +17,7 @@ export default function Women({ products }: WomenProps) {
   return (
     <>
       <Head>
-        <title>Women's | NextShoes</title>
+        <title>Women&apos;s | NextShoes</title>
       </Head>
       <Header selectedTab={'women'} />
       <Products products={products} />
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const responseJson = await response.json();
 
   const products = responseJson.filter((product: Product) => {
-      if (product.category === "Women's Shoes") return product;
+      if (product.category === "Women\'s Shoes") return product;
   });
 
   return {
