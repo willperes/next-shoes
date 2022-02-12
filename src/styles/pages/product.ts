@@ -56,9 +56,10 @@ export const Wrapper = styled.section`
                 height: 30px;
                 width: 30px;
                 background: ${props => props.theme.colors.background};
-                border: 2px solid ${props => props.theme.colors.primary};
+                border: none;
                 border-radius: 5px;
                 color: ${props => props.theme.colors.primary};
+                font-weight: 900;
                 transition: background .2s, color .2s;
                 margin: 0;
 
