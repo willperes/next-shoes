@@ -6,7 +6,7 @@
 
 <p align="center">🚀 Projeto de uma plataforma ecommerce de tênis.</p>
 
-<br>
+<br />
 
 # 📂Features
 
@@ -19,15 +19,18 @@
 - [ ] Sistema de login de clientes
 - [ ] Checkout do pedido
 
-<br>
+<br />
 
 # 📺Demonstração
 
 <p align="center">A aplicação ainda está em desenvolvimento, mas você pode acompanhar como está sendo o desenvolvimento <a href='https://next-shoes.vercel.app/'>clicando aqui</a>.</p>
 
-![Screenshot of the website](https://i.imgur.com/4lwYLvl.png)
+![Screenshot of the website](https://i.imgur.com/dpgumz5.png)
+<br />
 
-<br>
+![Screenshot of the website](https://i.imgur.com/FGjqNwq.png)
+
+<br />
 
 # 📝Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
@@ -55,7 +58,7 @@ $ yarn dev
 # A plataforma será executada na porta :3000 - acesse http://localhost:3000
 ```
 
-<br>
+<br />
 
 # 🛠️Tecnologias
 
@@ -67,8 +70,10 @@ As seguintes ferramentas e bibliotecas foram usadas na construção do projeto:
 - [Material.UI](https://mui.com/)
 - [React-Modal](https://github.com/reactjs/react-modal)
 - [React-Icons](https://react-icons.github.io/react-icons/)
+- [React-Toastify](https://fkhadra.github.io/react-toastify/)
+- [NProgress](https://ricostacruz.com/nprogress/)
 
-<br>
+<br />
 
 # ✍️Autor
 

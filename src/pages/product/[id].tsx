@@ -1,5 +1,6 @@
 import { GetStaticPaths } from "next";
 import Head from "next/head";
+import { useEffect } from "react";
 import { CustomButton } from "../../components/CustomButton";
 
 import { Header } from "../../components/Header";
@@ -25,7 +26,11 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-    const { addToCart } = useCart();
+    const { addToCart, changeProductSize } = useCart();
+
+    useEffect(() => {
+        changeProductSize(0);
+    }, []);
 
     function handleClick() {
         addToCart(product);

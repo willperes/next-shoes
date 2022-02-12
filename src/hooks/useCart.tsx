@@ -52,7 +52,6 @@ export function CartProvider({ children }: CartProviderProps) {
                 cart[i].quantity = cart[i].quantity + 1;
                 localStorage.setItem('@NextShoes: Cart', JSON.stringify(cart));
                 toast.success("Product added to the cart");
-                setProductSize(0);
                 return;
             }
         }
@@ -60,7 +59,6 @@ export function CartProvider({ children }: CartProviderProps) {
         cart.push(productFormatted);
         localStorage.setItem('@NextShoes: Cart', JSON.stringify(cart));
         toast.success("Product added to the cart");
-        setProductSize(0);
     }
 
     function removeFromCart(id: number, size: number) {
