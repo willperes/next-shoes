@@ -12,7 +12,7 @@ interface Product {
     id: number,
     name: string,
     category: string,
-    amount: string
+    amount: number
 }
 
 interface Params {
@@ -48,7 +48,10 @@ export default function Product({ product }: ProductProps) {
                     <div className="content">
                         <h1>{product.name} {product.id}</h1>
                         <h2>{product.category}</h2>
-                        <h3>{product.amount}</h3>
+                        <h3>{new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                        }).format(product.amount)}</h3>
                         <div className="size-selection">
                             <SizeSelection />
                         </div>
@@ -86,10 +89,7 @@ export const getStaticProps = async (context: Params) => {
         id: data.id,
         name: data.name,
         category: data.category,
-        amount: new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-        }).format(data.amount)
+        amount: data.amount
     }
 
     return {

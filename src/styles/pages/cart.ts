@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-    max-width: 1120px;
-    margin: 0 auto 1.5rem auto;
-    padding: 6.5rem 2rem;
+    padding-top: 6.5rem;
 
     color: ${props => props.theme.colors.text};
 
@@ -16,7 +14,40 @@ export const Container = styled.main`
     }
 `
 
+export const Wrapper = styled.section`
+    position: relative;
+
+    .cart-checkout-section {
+        position: sticky;
+        background: ${props => props.theme.colors.headerBackground};
+        bottom: 0;
+        padding: 2rem 0 4rem 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: none;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        button {
+            width: 20rem;
+            height: 3.5rem;
+            margin-top: .5rem;
+        }
+
+        .cart-payment-methods {
+            display: flex;
+            gap: .25rem;
+        }
+    }
+`
+
 export const Product = styled.div`
+    max-width: 1120px;
+    margin: 0 auto;
     display: flex;
 
     img {
@@ -27,6 +58,7 @@ export const Product = styled.div`
     &:first-child {
         padding-bottom: 1.5rem;
     }
+
 
     & + div {
         padding: 1.5rem 0;

@@ -6,6 +6,9 @@ import { CartProvider } from '../hooks/useCart';
 import { ChangeThemeProvider } from '../hooks/useChangeTheme';
 import { MenuProvider } from '../hooks/useMenu';
 
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer/Footer';
+
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import NProgress from 'nprogress';
@@ -60,8 +63,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <CartProvider>
         <MenuProvider>
           <ThemeProvider theme={isDarkTheme ? dark : light}>
+            <Header />
             <Component {...pageProps} />
-            <ToastContainer/>
+            <Footer />
+            <ToastContainer />
             <GlobalStyles />
           </ThemeProvider>
         </MenuProvider>

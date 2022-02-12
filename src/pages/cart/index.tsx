@@ -1,23 +1,27 @@
+import Head from "next/head";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+
 import { Header } from "../../components/Header";
-import { Container, Content, Product, RemoveItem } from "../../styles/pages/cart";
+import { CustomButton } from "../../components/CustomButton";
+import { Container, Content, Product, RemoveItem, Wrapper } from "../../styles/pages/cart";
+
+import { useCart } from "../../hooks/useCart";
 
 import IconButton from '@mui/material/IconButton';
 import { MdDelete } from 'react-icons/md';
-import { useCart } from "../../hooks/useCart";
-import Head from "next/head";
 
 interface Product {
     id: number,
     name: string,
     category: string,
-    amount: string,
+    amount: number,
     size: number,
     quantity: number,
 }
 
 export default function Cart() {
-    const [cost, setCost] = useState(0);
+    const [cost, setCost] = useState('');
     const [isVisible, setVisibility] = useState<boolean>();
     const [products, setProducts] = useState<Product[]>([])
 
@@ -36,7 +40,7 @@ export default function Cart() {
             let cart = JSON.parse(localStorage.getItem('@NextShoes: Cart') || '{}');
             if (cart.length === 0) {
                 setVisibility(false);
-                setCost(0);
+                setCost('');
                 return;
             }
             setProducts(cart);
@@ -48,9 +52,12 @@ export default function Cart() {
     function updateCost() {
         let currentCost = 0;
         for (let product of products) {
-            currentCost += Number(product.amount) * product.quantity;
+            currentCost += product.amount * product.quantity;
         }
-        setCost(currentCost);
+        setCost(new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+        }).format(currentCost));
     }
 
     useEffect(() => {
@@ -64,36 +71,58 @@ export default function Cart() {
                 setVisibility(true);
             }
         }
+        updateCost();
     }, [])
 
     useEffect(() => {
         updateCost();
     }, [products])
 
+    useEffect(() => {
+        console.log(cost);
+    }, [cost])
+
     return (
         <>
             <Head>
                 <title>Cart | NextShoes</title>
             </Head>
-            <Header />
             <Container>
                 {isVisible && (
-                    products.map((product: Product) => (
-                        <Product key={getKey(product)}>
-                            <img src="/images/shoe.jpg" alt={product.name} />
-                            <Content>
-                                <h1>{product.name}</h1>
-                                <h2>Size: <span>{product.size}</span></h2>
-                                <h2>Quantity: <span>{product.quantity}</span></h2>
-                                <h3>{product.amount}</h3>
-                            </Content>
-                            <RemoveItem>
-                                <IconButton aria-label="delete" onClick={() => handleClick(product.id, product.size)} >
-                                    <MdDelete />
-                                </IconButton>
-                            </RemoveItem>
-                        </Product>
-                    ))
+                    <Wrapper>
+                        {products.map((product: Product) => (
+                            <Product key={getKey(product)}>
+                                <img src="/images/shoe.jpg" alt={product.name} />
+                                <Content>
+                                    <h1>{product.name}</h1>
+                                    <h2>Size: <span>{product.size}</span></h2>
+                                    <h2>Quantity: <span>{product.quantity}</span></h2>
+                                    <h3>{new Intl.NumberFormat('en-US', {
+                                        style: 'currency',
+                                        currency: 'USD',
+                                    }).format(product.amount * product.quantity)}</h3>
+                                </Content>
+                                <RemoveItem>
+                                    <IconButton aria-label="delete" onClick={() => handleClick(product.id, product.size)} >
+                                        <MdDelete />
+                                    </IconButton>
+                                </RemoveItem>
+                            </Product>
+                        ))}
+                        <section className="cart-checkout-section">
+                            <h1>Cost: {cost}</h1>
+                            <CustomButton>Checkout</CustomButton>
+                            <div className="cart-payment-methods">
+                                <Image src="/images/mastercard-icon.svg" height="50%" width="50rem" />
+                                <Image src="/images/visa-icon.svg" height="50%" width="50rem" />
+                                <Image src="/images/googlepay-icon.svg" height="50%" width="50rem" />
+                                <Image src="/images/applepay-icon.svg" height="50%" width="50rem" />
+                                <Image src="/images/paypal-icon.svg" height="50%" width="50rem" />
+                                <Image src="/images/amazon-icon.svg" height="50%" width="50rem" />
+                                <Image src="/images/alipay-icon.svg" height="50%" width="50rem" />
+                            </div>
+                        </section>
+                    </Wrapper>
                 )}
                 {!isVisible && (
                     <h1 className="empty-cart">Your cart is empty.</h1>
