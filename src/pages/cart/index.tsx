@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { Header } from "../../components/Header";
 import { CustomButton } from "../../components/CustomButton";
 import { Container, Content, Product, RemoveItem, Wrapper } from "../../styles/pages/cart";
 
@@ -15,6 +14,7 @@ interface Product {
     id: number,
     name: string,
     category: string,
+    image: string,
     amount: number,
     size: number,
     quantity: number,
@@ -78,10 +78,6 @@ export default function Cart() {
         updateCost();
     }, [products])
 
-    useEffect(() => {
-        console.log(cost);
-    }, [cost])
-
     return (
         <>
             <Head>
@@ -92,7 +88,7 @@ export default function Cart() {
                     <Wrapper>
                         {products.map((product: Product) => (
                             <Product key={getKey(product)}>
-                                <img src="/images/shoe.jpg" alt={product.name} />
+                                <Link href={`/product/${product.id}`}><img src={product.image} alt={product.name} /></Link>
                                 <Content>
                                     <h1>{product.name}</h1>
                                     <h2>Size: <span>{product.size}</span></h2>
@@ -113,19 +109,21 @@ export default function Cart() {
                             <h1>Cost: {cost}</h1>
                             <CustomButton>Checkout</CustomButton>
                             <div className="cart-payment-methods">
-                                <Image src="/images/mastercard-icon.svg" height="50%" width="50rem" />
-                                <Image src="/images/visa-icon.svg" height="50%" width="50rem" />
-                                <Image src="/images/googlepay-icon.svg" height="50%" width="50rem" />
-                                <Image src="/images/applepay-icon.svg" height="50%" width="50rem" />
-                                <Image src="/images/paypal-icon.svg" height="50%" width="50rem" />
-                                <Image src="/images/amazon-icon.svg" height="50%" width="50rem" />
-                                <Image src="/images/alipay-icon.svg" height="50%" width="50rem" />
+                                <img src="/images/mastercard-icon.svg" alt="MasterCard icon" />
+                                <img src="/images/visa-icon.svg" alt="Visa icon" />
+                                <img src="/images/googlepay-icon.svg" alt="GooglePay icon" />
+                                <img src="/images/applepay-icon.svg" alt="ApplePay icon" />
+                                <img src="/images/paypal-icon.svg" alt="PayPal icon" />
+                                <img src="/images/amazon-icon.svg" alt="Amazon icon" />
+                                <img src="/images/alipay-icon.svg" alt="AliPay icon" />
                             </div>
                         </section>
                     </Wrapper>
                 )}
                 {!isVisible && (
-                    <h1 className="empty-cart">Your cart is empty.</h1>
+                    <section className="cart-empty">
+                        <h1>Your cart is empty.</h1>
+                    </section>
                 )}
             </Container>
         </>

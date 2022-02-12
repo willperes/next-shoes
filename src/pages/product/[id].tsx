@@ -12,6 +12,7 @@ interface Product {
     id: number,
     name: string,
     category: string,
+    image: string,
     amount: number
 }
 
@@ -29,7 +30,7 @@ export default function Product({ product }: ProductProps) {
     const { addToCart, changeProductSize } = useCart();
 
     useEffect(() => {
-        changeProductSize(0);
+        changeProductSize('');
     }, []);
 
     function handleClick() {
@@ -44,9 +45,9 @@ export default function Product({ product }: ProductProps) {
             <Header />
             <Main>
                 <Wrapper>
-                    <img src="/images/shoe.jpg" alt={product.name} />
+                    <img src={product.image} alt={product.name} />
                     <div className="content">
-                        <h1>{product.name} {product.id}</h1>
+                        <h1>{product.name}</h1>
                         <h2>{product.category}</h2>
                         <h3>{new Intl.NumberFormat('en-US', {
                             style: 'currency',
@@ -89,6 +90,7 @@ export const getStaticProps = async (context: Params) => {
         id: data.id,
         name: data.name,
         category: data.category,
+        image: data.image,
         amount: data.amount
     }
 

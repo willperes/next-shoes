@@ -9,13 +9,14 @@ interface Product {
     id: number,
     name: string,
     category: string,
+    image: string,
     amount: number
 }
 
 interface CartContextData {
-    changeProductSize: (size: number) => void;
+    changeProductSize: (size: string) => void;
     addToCart: (product: Product) => void;
-    removeFromCart: (id: number, size: number) => void;
+    removeFromCart: (id: number, size: string) => void;
 }
 
 const CartContext = createContext<CartContextData>(
@@ -23,10 +24,10 @@ const CartContext = createContext<CartContextData>(
 );
 
 export function CartProvider({ children }: CartProviderProps) {
-    const [productSize, setProductSize] = useState(0);
+    const [productSize, setProductSize] = useState('');
 
     function addToCart(product: Product) {
-        if (productSize === 0) {
+        if (productSize === '') {
             toast.error("You have to select a size before adding the product to the cart");
             return;
         }
@@ -41,6 +42,7 @@ export function CartProvider({ children }: CartProviderProps) {
             id: product.id,
             name: product.name,
             category: product.category,
+            image: product.image,
             amount: product.amount,
             size: productSize,
             quantity: 1
@@ -61,7 +63,7 @@ export function CartProvider({ children }: CartProviderProps) {
         toast.success("Product added to the cart");
     }
 
-    function removeFromCart(id: number, size: number) {
+    function removeFromCart(id: number, size: string) {
         let cart = [];
 
         if (localStorage.hasOwnProperty('@NextShoes: Cart')) {
@@ -83,7 +85,7 @@ export function CartProvider({ children }: CartProviderProps) {
         }
     }
 
-    function changeProductSize(size: number) {
+    function changeProductSize(size: string) {
         setProductSize(size)
     }
 

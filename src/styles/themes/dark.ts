@@ -5,6 +5,8 @@ export default {
         primary: '#0056D0',
         headerBackground: '#111111',
         background: '#151515',
+
+        lightBorder: '#353535',
         white: '#FFFFFF',
 
         gray300: '#C1C1C1',

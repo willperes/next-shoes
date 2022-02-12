@@ -5,31 +5,31 @@ import { Container } from "./styles";
 export function SizeSelection() {
     const { changeProductSize } = useCart();
 
-    const button38 = useRef<HTMLButtonElement>(null);
-    const button39 = useRef<HTMLButtonElement>(null);
-    const button40 = useRef<HTMLButtonElement>(null);
-    const button41 = useRef<HTMLButtonElement>(null);
-    const button42 = useRef<HTMLButtonElement>(null);
+    const XS = useRef<HTMLButtonElement>(null);
+    const S = useRef<HTMLButtonElement>(null);
+    const M = useRef<HTMLButtonElement>(null);
+    const L = useRef<HTMLButtonElement>(null);
+    const XL = useRef<HTMLButtonElement>(null);
 
-    function handleClick(id: number, event: React.MouseEvent<HTMLButtonElement>) {
-        changeProductSize(id);
+    function handleClick(size: string, event: React.MouseEvent<HTMLButtonElement>) {
+        changeProductSize(size);
 
-        if (button38 && button38.current) button38.current.className = "not-active";
-        if (button39 && button39.current) button39.current.className = "not-active";
-        if (button40 && button40.current) button40.current.className = "not-active";
-        if (button41 && button41.current) button41.current.className = "not-active";
-        if (button42 && button42.current) button42.current.className = "not-active";
+        if (XS && XS.current) XS.current.className = "not-active";
+        if (S && S.current) S.current.className = "not-active";
+        if (M && M.current) M.current.className = "not-active";
+        if (L && L.current) L.current.className = "not-active";
+        if (XL && XL.current) XL.current.className = "not-active";
 
         event.currentTarget.className = "selected";
     }
 
     return (
         <Container>
-            <button className="test" type="button" ref={button38} onClick={(e) => handleClick(38, e)}>38</button>
-            <button ref={button39} onClick={(e) => handleClick(39, e)}>39</button>
-            <button ref={button40} onClick={(e) => handleClick(40, e)}>40</button>
-            <button ref={button41} onClick={(e) => handleClick(41, e)}>41</button>
-            <button ref={button42} onClick={(e) => handleClick(42, e)}>42</button>
+            <button ref={XS} onClick={(e) => handleClick('XS', e)}>XS</button>
+            <button ref={S} onClick={(e) => handleClick('S', e)}>S</button>
+            <button ref={M} onClick={(e) => handleClick('M', e)}>M</button>
+            <button ref={L} onClick={(e) => handleClick('L', e)}>L</button>
+            <button ref={XL} onClick={(e) => handleClick('XL', e)}>XL</button>
         </Container>
     );
 }

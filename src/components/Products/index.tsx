@@ -7,7 +7,7 @@ interface ProductsProps {
         id: number,
         name: string,
         category: string,
-        amount: string
+        amount: number
     }]
 }
 
@@ -15,7 +15,7 @@ interface Product {
     id: number,
     name: string,
     category: string,
-    amount: string
+    amount: number
 }
 
 export function Products({ products }: ProductsProps) {

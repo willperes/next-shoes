@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Modal from 'react-modal';
 import { useMenu } from '../../hooks/useMenu';
 
@@ -30,14 +32,14 @@ export function MenuModal() {
             </button>
             <Content>
                 <nav>
-                    <CustomButton linkTo={'/'} onClick={handleButtonClick}>Home</CustomButton>
-                    <CustomButton linkTo={'/'} onClick={handleButtonClick}>Women</CustomButton>
-                    <CustomButton linkTo={'/'} onClick={handleButtonClick}>Men</CustomButton>
-                    <CustomButton linkTo={'/'} onClick={handleButtonClick}>Kids</CustomButton>
+                    <Link href={'/'}><span><CustomButton onClick={handleButtonClick}>Home</CustomButton></span></Link>
+                    <Link href={'/women'}><span><CustomButton onClick={handleButtonClick}>Women</CustomButton></span></Link>
+                    <Link href={'/men'}><span><CustomButton onClick={handleButtonClick}>Men</CustomButton></span></Link>
+                    <Link href={'/kids'}><span><CustomButton onClick={handleButtonClick}>Kids</CustomButton></span></Link>
                 </nav>
                 <Divider className="divider"/>
-                <CustomButton linkTo={'/'} onClick={handleButtonClick}><FaSearch /></CustomButton>
-                <CustomButton linkTo={'/'} onClick={handleButtonClick}><FaShoppingCart /></CustomButton>
+                <Link href={'/'}><span><CustomButton onClick={handleButtonClick}><FaSearch /></CustomButton></span></Link>
+                <Link href={'/cart'}><span><CustomButton onClick={handleButtonClick}><FaShoppingCart /></CustomButton></span></Link>
                 <SignInButton />
                 <div className="theme-switch">
                     <ThemeSwitch />

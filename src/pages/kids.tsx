@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Products } from '../components/Products'
 
-interface HomeProps {
+interface KidsProps {
   products: [{
     id: number,
     name: string,
@@ -13,13 +13,13 @@ interface HomeProps {
   }]
 }
 
-export default function Home({ products }: HomeProps) {
+export default function Kids({ products }: KidsProps) {
   return (
     <>
       <Head>
-        <title>Home | NextShoes</title>
+        <title>Kids' | NextShoes</title>
       </Head>
-      <Header selectedTab={'home'} />
+      <Header selectedTab={'kids'} />
       <Products products={products} />
     </>
   )
@@ -35,7 +35,11 @@ type Product = {
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch(`${process.env.API_URL}/products`);
-  const products = await response.json();
+  const responseJson = await response.json();
+
+  const products = responseJson.filter((product: Product) => {
+      if (product.category === "Kids' Shoes") return product;
+  });
 
   return {
     props: {

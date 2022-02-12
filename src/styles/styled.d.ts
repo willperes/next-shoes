@@ -8,6 +8,8 @@ declare module 'styled-components' {
             primary: string;
             headerBackground: string;
             background: string;
+
+            lightBorder: string;
             white: string;
 
             gray300: string;
@@ -26,6 +28,8 @@ declare module 'styled-components' {
             primary: string;
             headerBackground: string;
             background: string;
+
+            lightBorder: string;
             white: string;
 
             gray300: string;

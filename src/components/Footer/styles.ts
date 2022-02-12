@@ -28,7 +28,7 @@ export const CustomFooter = styled.footer`
                     font-weight: 500;
                     padding-bottom: 1rem;
                     margin-bottom: 1rem;
-                    border-bottom: 1px solid ${props => props.theme.colors.textLighter};
+                    border-bottom: 1px solid ${props => props.theme.colors.lightBorder};
                 }
 
                 p {
@@ -44,7 +44,7 @@ export const CustomFooter = styled.footer`
     }
 
     .footer-payment-methods {
-        border-top: 1px solid ${props => props.theme.colors.textLighter};
+        border-top: 1px solid ${props => props.theme.colors.lightBorder};
         display: flex;
         gap: 1rem;
         margin: 0 2.5rem;
@@ -71,16 +71,24 @@ export const CustomFooter = styled.footer`
                     h5 {
                         font-size: 2rem;
                     }
-            
-                    h6 {
+                }
+            }
+        }
+    }
+
+    @media (max-width: 598px) {
+        .footer-wrapper {
+            ul {
+                li {
+                    h5 {
                         font-size: 1.75rem;
-                    }
-            
-                    a {
-                        font-size: 1.25rem;
                     }
                 }
             }
+        }
+
+        .footer-payment-methods {
+            gap: .25rem;
         }
     }
 `

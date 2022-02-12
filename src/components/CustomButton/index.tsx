@@ -3,11 +3,10 @@ import { Button } from "./styles";
 
 interface CustomButtonProps {
     children: React.ReactNode;
-    linkTo?: string;
     onClick?: () => void;
 }
 
-export function CustomButton({ children, linkTo, onClick }: CustomButtonProps) {
+export function CustomButton({ children, onClick }: CustomButtonProps) {
     return (
         
             <Button onClick={onClick}>
