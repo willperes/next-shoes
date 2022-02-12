@@ -13,6 +13,7 @@ export default createGlobalStyle`
     }
 
     body {
+        position: relative;
         background: ${props => props.theme.colors.background};
     }
 

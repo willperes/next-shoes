@@ -10,7 +10,7 @@ export const Container = styled.main`
     }
 
     @media (max-width: 598px) {
-        padding: 6rem 3.5vw;
+        padding: 6rem 3.5vw 0 3.5vw;
     }
 `
 
@@ -19,7 +19,7 @@ export const Wrapper = styled.section`
 
     .cart-checkout-section {
         position: sticky;
-        background: ${props => props.theme.colors.headerBackground};
+        background: ${props => props.theme.colors.background};
         bottom: 0;
         padding: 2rem 0 4rem 0;
         width: 100%;
@@ -49,6 +49,7 @@ export const Product = styled.div`
     max-width: 1120px;
     margin: 0 auto;
     display: flex;
+    padding: 0 2rem;
 
     img {
         height: auto;

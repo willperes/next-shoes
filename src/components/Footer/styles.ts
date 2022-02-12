@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const CustomFooter = styled.footer`
+    position: absolute;
+    bottom: -29.26rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,12 +51,9 @@ export const CustomFooter = styled.footer`
         padding-top: 1rem;
     }
 
-    @media screen and (max-width: 950px) {
-        padding: 7.5rem 0;
-    }
-
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 840px) {
         padding: 5rem 0;
+        bottom: -52.6rem;
 
         .footer-wrapper {
             display: flex;
