@@ -13,9 +13,9 @@
 - [x] Listar produtos utilizando uma API
 - [x] Adicionar produtos ao carrinho
 - [x] Remover produtos do carrinho
-- [ ] Atualizar o preço do carrinho de acordo com os produtos e suas quantidades
+- [x] Atualizar o preço do carrinho de acordo com os produtos e suas quantidades
 - [x] Hamburguer menu
-- [ ] Atualizar quantidade do produto no carrinho
+- [x] Atualizar quantidade do produto no carrinho
 - [ ] Sistema de login de clientes
 - [ ] Checkout do pedido
 

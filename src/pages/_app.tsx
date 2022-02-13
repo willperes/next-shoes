@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Header />
             <Component {...pageProps} />
             <Footer />
-            <ToastContainer />
+            <ToastContainer autoClose={2500} />
             <GlobalStyles />
           </ThemeProvider>
         </MenuProvider>

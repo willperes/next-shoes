@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { CustomButton } from "../../components/CustomButton";
-import { Container, Content, Product, RemoveItem, Wrapper } from "../../styles/pages/cart";
+import { Container, Product, RemoveItem, Wrapper } from "../../styles/pages/cart";
 
 import { useCart } from "../../hooks/useCart";
 
@@ -49,6 +49,33 @@ export default function Cart() {
         }
     }
 
+    function decreaseQuantity(id: number, size: string) {
+        let cart = JSON.parse(localStorage.getItem('@NextShoes: Cart') || '{}');
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id === id && cart[i].size === size) {
+                if (cart[i].quantity === 1) return;
+                cart[i].quantity -= 1;
+                localStorage.setItem('@NextShoes: Cart', JSON.stringify(cart));
+                setProducts(cart);
+                return;
+            }
+        }
+    }
+
+    function increaseQuantity(id: number, size: string) {
+        let cart = JSON.parse(localStorage.getItem('@NextShoes: Cart') || '{}');
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id === id && cart[i].size === size) {
+                cart[i].quantity += 1;
+                localStorage.setItem('@NextShoes: Cart', JSON.stringify(cart));
+                setProducts(cart);
+                return;
+            }
+        }
+    }
+
     function updateCost() {
         let currentCost = 0;
         for (let product of products) {
@@ -88,16 +115,26 @@ export default function Cart() {
                     <Wrapper>
                         {products.map((product: Product) => (
                             <Product key={getKey(product)}>
-                                <Link href={`/product/${product.id}`}><img src={product.image} alt={product.name} /></Link>
-                                <Content>
-                                    <h1>{product.name}</h1>
-                                    <h2>Size: <span>{product.size}</span></h2>
-                                    <h2>Quantity: <span>{product.quantity}</span></h2>
+                                <header>
+                                    <Link href={`/product/${product.id}`}><img src={product.image} alt={product.name} /></Link>
+                                    <div className="cart-product-header">
+                                        <h1>{product.name}</h1>
+                                        <h2>{product.category}</h2>
+                                        <h3>Size: <span>{product.size}</span></h3>
+                                    </div>
+                                </header>
+                                <footer>
+                                    <div className="cart-product-quantity">
+                                        <h2>Quantity:</h2>
+                                        <button onClick={() => decreaseQuantity(product.id, product.size)} >-</button>
+                                        <span>{product.quantity}</span>
+                                        <button onClick={() => increaseQuantity(product.id, product.size)} >+</button>
+                                    </div>
                                     <h3>{new Intl.NumberFormat('en-US', {
                                         style: 'currency',
                                         currency: 'USD',
                                     }).format(product.amount * product.quantity)}</h3>
-                                </Content>
+                                </footer>
                                 <RemoveItem>
                                     <IconButton aria-label="delete" onClick={() => handleClick(product.id, product.size)} >
                                         <MdDelete />
